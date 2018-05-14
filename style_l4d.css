@@ -1,0 +1,500 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	display: grid;
+	grid-template-columns:
+	.86fr 1fr .86fr;
+	grid-template-rows:
+	900px 800px 800px;
+	grid-template-areas:
+	"showcase  showcase  showcase"
+	"content   content   content"
+	"content-2 content-2 content-2";
+}
+
+.container2 {
+	display: grid;
+	grid-template-columns:
+	.86fr 1fr .86fr;
+	grid-template-rows:
+	900px 800px 800px 800px 800px;
+	grid-template-areas:
+	"showcase  showcase  showcase"
+	"content   content   content"
+	"content-2 content-2 content-2"
+	"content-3 content-3 content-3"
+	"content-4 content-4 content-4";
+}
+
+.lightbox {
+	display: none;
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+}
+
+.lightbox img {
+	max-width: 90%;
+	max-height: 80%;
+	margin-top: 2%;
+}
+
+.lightbox:target {
+	outline: none;
+	display: block;
+}
+
+.thumbnail {
+  max-width: 40%;
+}
+
+nav{
+	background-color: black;
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	height: 60px;
+	display: flex;
+	align-content: left;
+}
+
+nav a {
+	color: white;
+	text-decoration: none;
+	padding: 13px 3px;
+	float: left;
+	display: block;
+	font-family: 'Pragati Narrow';
+}
+
+nav a:hover:not(.active), .dropdown:hover .dropbtn {
+	background-color: gray;
+	color: black;
+}
+
+nav a.active {
+	background-color: gray;
+	color: black;
+}
+
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dropbtn {
+	border: none;
+	outline: none;
+	font-size: 1em;
+	color: white;
+	padding: 13px 9px;
+	background-color: inherit;
+	font-family: 'Pragati Narrow';
+	margin: 0;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: black;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	float: none;
+	color: white;
+	padding: 10px 15px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.l4dlogo {
+	display: flex;
+	align-content: right;
+	height: 60px;
+	width: 58px;
+	opacity: 0.5;
+	transition: opacity .25s ease-in-out;
+	margin-right: 3px;
+}
+
+.l4dlogolink {
+	padding: 0px;
+	margin: 0px;
+}
+
+.l4dlogo:hover{
+	opacity: 1;
+}
+
+.showcase{
+	background: url("media/showcaseimg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	grid-area: showcase;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.CampaignDirectory {
+	width: 300px;
+	height: 440px;
+	background-color:rgba(0, 0, 0, 0.5);
+	border: 2px solid #065a06;
+	border-radius: 5px;
+	margin-right: 100px;
+	font-family: 'Pragati Narrow';
+	color: white;
+	padding: 2px;
+	font-size: 20px;
+}
+
+.l4dCharacter {
+	position: relative;
+	width: 50%;
+	background-color:rgba(0, 0, 0, 0.5);
+	border: 3px solid #065a06;
+	margin-right: 17px;
+	padding: 10px;
+}
+
+.hoverImg {
+	opacity: 1;
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: .5s ease;
+	backface-visibility: hidden;
+}
+
+.textBox {
+	transition: .5s ease;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	width: 300px;
+	height: 50px;
+	text-align: center;
+}
+
+.l4dCharacter:hover .hoverImg {
+  opacity: 0.3;
+}
+
+.l4dCharacter:hover .textBox {
+  opacity: 1;
+}
+
+.hoverText {
+	color: white;
+	font-size: 25px;
+	padding: 16px 32px;
+	font-family: 'Pragati Narrow';
+}
+
+.CampaignHeader {
+	margin: 0px;
+}
+
+a:link {
+	text-decoration: none;
+	color: white;
+}
+a:visited {
+    text-decoration: none;
+	color: white;
+}
+a:hover {
+    text-decoration: underline;
+	color: #065a06;
+}
+
+ul.a {
+	list-style-type: circle;
+}
+
+.infoL4DMaps{
+	width: 750px;
+	height: 440px;
+	color: white;
+	font-family: 'Pragati Narrow';
+	font-size: 1.5em;
+	background-color:rgba(0, 0, 0, 0.5);
+	border: 2px solid #065a06;
+	border-radius: 5px;
+	padding: 7px;
+	margin: auto;
+}
+
+.homevidcenter{
+	margin: auto;
+}
+
+.l4dlogosize {
+	width: 67px;
+	height: 86px;
+	background-color: black;
+}
+
+.title_of{
+	font-family: 'Pragati Narrow';
+	font-size: 5em;
+	color: white;
+}
+
+.ordervids{
+	display: flex;
+	flex-direction: row;
+	margin: auto;
+}
+
+.l4d2{
+	width: 750px;
+	height: 250px;
+	margin: auto;
+}
+
+.l4dtrailer{
+	width: 600px;
+	height: 400px;
+	float: left;
+}
+
+.items {
+	margin-right: 5%;
+	margin-top: 180px;
+	width: 500px;
+	height: 300px;
+	font-family: 'Pragati Narrow';
+	font-size:1.4em;
+	border-bottom: 3px solid #065a06;
+	border-radius: 10px;
+	color: white;
+	background-color:rgba(0, 0, 0, 0.5);
+}
+	
+.content{
+	grid-area: content;
+	background: url("media/contentimg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between; 
+	font-family: 'Pragati Narrow';
+}
+
+.contentB{
+	grid-area: content;
+	background: url("media/l4dNoMercy.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between; 
+	font-family: 'Pragati Narrow';
+}
+
+.header-c{
+	font-family: 'Pragati Narrow';
+	font-size: 3em;
+	color: white;
+	padding-top: 30px;
+	padding-left:50px;
+}
+
+.header-ce{
+	font-family: 'Pragati Narrow';
+	color: #065a06;
+	padding-left:50px;
+}
+	
+.content-2{
+	grid-area: content-2;
+	background: url("media/showcase.png");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between; 
+}
+
+.content-2B{
+	grid-area: content-2;
+	background: url("media/l4dCrashCourse.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between; 	
+}
+
+.content-3{
+	grid-area: content-3;
+	background: url("media/l4dDeathToll.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between; 	
+}
+
+.content-4 {
+	grid-area: content-4;
+	background: url("media/l4dDeadAir.png");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between; 	
+}
+
+.lightbox {
+	display: none;
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+	padding-top: 15%;
+	background: rgba(0,0,0,0.8);
+	animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@keyframes animatetop {
+	from {top: -300px; opacity: 0}
+	to {top: 0px; opacity: 1}
+}
+
+.lightbox img {
+	max-width: 90%;
+	max-height: 80%;
+	margin-top: 2%;
+}
+
+.lightbox:target {
+	outline: none;
+	display: block;
+}
+
+.order{
+	display: flex;
+	flex-flow: column;
+}
+
+.split {
+	width: 700px;
+	height: auto;
+	margin-left: 50px;
+	border: 3px solid #065a06;
+}
+
+.splitLouis {
+	width: 450px;
+	height: 550px;
+	margin-left: 50px;
+	border: 3px solid #065a06;
+}
+
+.containerslide {
+	max-width: 700px;
+	position: relative;
+	margin: auto;
+	height: 450px;
+	font-family: 'Pragati Narrow';
+	border: 3px #065a06 solid;
+	margin-left: 50px;
+}
+
+.slideImg {
+	width: 100%;
+	height: 445px;
+}
+
+.mySlides {
+	display: none;
+}
+
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+}
+
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+	color: #f2f2f2;
+	font-size: 17px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+	font-style: italic;
+}
+
+.numbertext {
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute; 
+	top: 0;
+}
+
