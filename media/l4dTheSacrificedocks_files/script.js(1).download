@@ -1,0 +1,309 @@
+/*********************************************************************
+Init
+**********************************************************************/
+"use strict";
+
+var STAGE_WIDTH = 300;
+var STAGE_HEIGHT = 250;
+
+var _item = {};
+var _count = 0;
+
+var _hasTouchEvents = ("ontouchstart" in document.documentElement);
+
+function initBanner(){
+  getSelectorsWithId();
+
+  addEventListeners();
+
+  TweenLite.set(['.force3d'], {rotationZ: 0.01,force3D:true});
+
+  startAnimation();
+
+  // loadPixel("http://www.pixel.com");
+
+  // setCentreItemPos("both", [_item.text1,_item.text2,_item.text3, _item.text4, _item.end]);
+  // setCentreItemPos("vertical", [_item.car1, _item.car2, _item.car3]);
+
+}
+
+
+/*********************************************************************
+Event handlers
+**********************************************************************/
+function addEventListeners(){
+
+  _item.cta_hitArea.addEventListener("click", exitHandler, false);
+  _item.bg_exit.addEventListener("click", bgExitHandler, false);
+
+  // no rollover on touch devices
+  if(!_hasTouchEvents){
+    // _item.cta_hitArea.addEventListener("mouseover", function (e){
+      // TweenLite.to(_item.ctaUp, 0.5, {scale:1.05, ease:Quad.easeOut});
+    // })
+
+    // _item.cta_hitArea.addEventListener("mouseout", function (e){
+      // TweenLite.to(_item.ctaUp, 0.5, {scale:1, ease:Quad.easeOut});
+    // })
+  }
+
+
+}
+
+/*********************************************************************
+Animation Handlers
+**********************************************************************/
+
+var tl;
+function startAnimation(){
+  resetCss();
+
+    var fadeTime = 1;
+    tl = new TimelineLite();
+    tl.set(_item.container, {autoAlpha:1}, "+=0");
+    tl.set(_item.person, {x:STAGE_WIDTH}, "+=0");
+    tl.to(_item.person, 2, {x:0}, "+=0");
+    tl.to(_item.text1, fadeTime, {autoAlpha:1}, "-=0.0");
+    tl.to(_item.text4, fadeTime, {autoAlpha:1}, "-=1");
+    tl.to(_item.logo, fadeTime, {autoAlpha:1}, "-=0.0");
+    tl.to(_item.text3, fadeTime, {autoAlpha:1}, "+=0.5");
+    
+    tl.to(_item.cta_hitArea, fadeTime, {autoAlpha:1}, "-=1");
+   
+    // tl.call(checkForLoop, this, "+=2"); 
+  
+}
+
+function checkForLoop(){
+  if(_count == 0) {
+      resetCss();
+      _count++;
+      startAnimation();
+    }
+}
+
+function replay(){
+    resetCss();
+    startAnimation();
+}
+
+function resetCss(){
+
+  var fadeInElements = _item.content.getElementsByClassName("hidden");
+
+  for(var i =0; i<fadeInElements.length; i++){
+    hideItem(fadeInElements[i]);
+  }
+
+  var showElements = _item.content.getElementsByTagName("*");
+  for(var i =0; i<showElements.length; i++){
+    if((showElements[i].className).indexOf("hidden") == -1){
+       showItem(showElements[i]);
+    }
+  }
+
+  var all = document.getElementsByTagName("*");
+  for(var i =0; i<all.length; i++){
+    TweenLite.killTweensOf(all[i]);
+  }
+
+  // TweenLite.set(_item.spritesheet, {css:{"backgroundPosition":"0 0"}}); 
+  // TweenLite.set(_item.text1, {autoAlpha:0}); 
+
+}
+
+function TLYoyoAnimation(target, interval, cssHashFrom, cssHashTo, loop){
+
+  for(var i=0; i<loop; i++){
+    TweenLite.to(target, interval, {css:cssHashTo, ease: Power1.easeOut, delay: i*2*interval});  
+    TweenLite.to(target, interval, {css:cssHashFrom, ease: Power1.easeOut, delay:(i*2+1)*interval});  
+  }
+
+}
+
+
+/*********************************************************************
+Selector aquiring function
+**********************************************************************/
+
+function getSelectorsWithId(){
+  _item.container = document.getElementById("container");
+  _item.content = document.getElementById("content");
+
+  var divs = _item.container.getElementsByTagName("*");
+
+  for(var i=0; i < divs.length; i++){
+    if(divs[i].id !="undefined"){
+      _item[divs[i].id] = divs[i];
+    }
+  }
+}
+
+
+/*********************************************************************
+Sprite Sheet Animation
+**********************************************************************/
+
+//      TweenLite.delayedCall(1.2, startSpriteAnimation, [_item.xxxx, 8, 8, 270, 255, 15, 0.09, 1, 10, true])
+
+function startSpriteAnimation(target, frameNum, lineChangeInterval, width, height, duration, frameRate, startFrame, endFrame, isLoop){
+    var shiftDistance_x = -width;
+    var shiftDistance_y = -height;
+    var targetEndFrame;
+    if(endFrame != 0){
+      targetEndFrame = endFrame;
+    }
+
+    var backPos_x ="0px";
+    var backPos_y ="0px";
+    var delayInterval;
+    var num;
+    var floorNum;
+
+    //calculate how many loops required
+    var baseDuration = frameRate * frameNum;
+    var loop = duration / baseDuration;
+    var count = 0;
+
+    for(var i=startFrame; i<frameNum; i++){
+
+      //--NEW
+      num = i/lineChangeInterval;
+      floorNum = Math.floor(num);
+      if(!isFinite(floorNum)){
+        floorNum = 1;
+      } else{
+        if(floorNum == num) {
+          //if sprite sheet line needs to shift in Y direction, change y position
+          backPos_y = shiftDistance_y * num + "px";
+        }
+      }
+      //--NEW
+
+      //--OLD
+      // num = i/lineChangeInterval;
+      // floorNum = Math.floor(num);
+      //--OLD
+
+      //if sprite sheet line needs to shift in Y direction, change y position
+      if(floorNum == num) backPos_y = shiftDistance_y * num + "px";
+
+      //calculate background x position. When line shifts, reset to 0
+      backPos_x = (i - lineChangeInterval * floorNum) * shiftDistance_x +"px";
+
+      //delay interval calculation (adding delay interval for repeat too)
+      delayInterval = frameRate * i + (count*baseDuration);
+
+      //animation
+      if(targetEndFrame != 0){
+        if(i <= targetEndFrame){
+           TweenLite.to(target, frameRate, {css:{"backgroundPosition":backPos_x + " "+ backPos_y}, ease:SteppedEase.config(1), delay: delayInterval});
+         }
+      } else {
+        break;
+      }
+
+      //repeat configuration
+      if(i == frameNum -1 && isLoop){
+        count++;
+        if(count<loop+1) i=-1;
+      }
+    }
+}
+
+
+/*********************************************************************
+CSS Manipulation
+**********************************************************************/
+
+function showItem(target){
+    TweenLite.set(target, {autoAlpha:1});
+}
+
+function hideItem(target){
+    TweenLite.set(target, {autoAlpha:0});
+}
+
+function setCentreItemPos(direction, targetArray){
+
+  var centerPos;
+
+  for(var i=0; i<targetArray.length; i++){
+
+    if (direction == "horizontal"|| direction =="both"){
+      centerPos = (STAGE_WIDTH - parseInt(targetArray[i].offsetWidth))/2;
+      targetArray[i].style.left = Math.round(centerPos)+"px";
+
+    }
+
+    if (direction =="vertical" || direction =="both"){
+       centerPos = (STAGE_HEIGHT - parseInt(targetArray[i].offsetHeight))/2;
+       targetArray[i].style.top = Math.round(centerPos)+"px";
+    }
+
+  }
+}
+
+function swapIndex(targetItem, targetIndex){
+  TweenLite.set(targetItem, {css:{zIndex:targetIndex}});
+}
+
+function getCursorPos(e){
+    // e is the button hander event, or onmousemove event
+    var posx = 0;
+    var posy = 0;
+      if (e.pageX || e.pageY)     {
+          posx = e.pageX;
+          posy = e.pageY;
+      } else if (e.clientX || e.clientY)    {
+          posx = e.clientX + document.body.scrollLeft
+              + document.documentElement.scrollLeft;
+          posy = e.clientY + document.body.scrollTop
+              + document.documentElement.scrollTop;
+      }
+     return {x:posx, y:posy};
+ }
+
+ function setParent(el, newParent){
+    newParent.appendChild(el);
+}
+
+/*********************************************************************
+Pixel Loader
+**********************************************************************/
+var loadPixel = function(url) {
+  // Create a new image element.
+  var imageElement = document.createElement('img');
+
+  // Add the image to the DOM.
+  document.body.appendChild(imageElement);
+
+  // Set the src attribute of the image.
+  imageElement.src = url;
+  imageElement.style.borderStyle = 'none';
+  imageElement.height = 1;
+  imageElement.width = 1;
+  imageElement.alt = '';
+};
+
+
+/*********************************************************************
+Exit handlers
+**********************************************************************/
+
+function bgExitHandler(e){
+  exitHandler(e);
+}
+
+var exitPixelWasLoaded = false;
+function exitHandler(e){
+  // if (!exitPixelWasLoaded) {
+    // loadPixel(pixelUrlExit);
+    // exitPixelWasLoaded = true;
+  // }
+
+  window.open(clickTag); 
+  console.log('dcm click');
+
+}
+
