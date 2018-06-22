@@ -1,0 +1,1283 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/*Grid Containers*/
+.container {
+	display: grid;
+	grid-template-columns:
+	.86fr 1fr .86fr;
+	grid-template-rows:
+	900px 800px 800px;
+	grid-template-areas:
+	"showcase  showcase  showcase"
+	"content   content   content"
+	"content-2 content-2 content-2";
+}
+
+.container2 {
+	display: grid;
+	grid-template-columns:
+	.86fr 1fr .86fr;
+	grid-template-rows:
+	900px 800px 800px 800px 800px 800px 800px ;
+	grid-template-areas:
+	"showcase  showcase  showcase"
+	"content   content   content"
+	"content-2 content-2 content-2"
+	"content-3 content-3 content-3"
+	"content-4 content-4 content-4"
+	"content-5 content-5 content-5"
+	"content-6 content-6 content-6"
+	"content-7 content-7 content-7";
+}
+
+.container4 {
+	display: grid;
+	grid-template-columns:
+	.86fr 1fr .86fr;
+	grid-template-rows:
+	900px 800px 800px 800px 800px 800px 800px 800px 800px;
+	grid-template-areas:
+	"showcase  showcase  showcase"
+	"content   content   content"
+	"content-2 content-2 content-2"
+	"content-3 content-3 content-3"
+	"content-4 content-4 content-4"
+	"content-5 content-5 content-5"
+	"content-6 content-6 content-6"
+	"content-7 content-7 content-7"
+	"content-8 content-8 content-8";
+}
+
+.container3 {
+	display: grid;
+	grid-template-columns:
+	.86fr 1fr .86fr;
+	grid-template-rows:
+	900px 800px 800px 800px 800px;
+	grid-template-areas:
+	"showcaseSurvivors  showcaseSurvivors  showcaseSurvivors"
+	"contentBill   contentBill   contentBill"
+	"contentLouis contentLouis contentLouis"
+	"contentZoey contentZoey contentZoey"
+	"contentFrancis contentFrancis contentFrancis";
+}
+/*End of Grid Containers*/
+
+/*----------------------------------------------*/
+
+/*Media Queries*/
+@media screen and (max-width: 1300px) {
+	.container {
+    display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows:
+		1100px 1000px;
+	grid-template-areas:
+	"showcase"
+	"content"
+	"content-2"
+	"content-3"
+	"content-4";
+    }
+	
+	.container3 {
+	display: grid;
+	grid-template-columns:
+	1fr ;
+	grid-template-rows:
+	900px 900px;
+	grid-template-areas:
+	"showcaseSurvivors"
+	"contentBill"
+	"contentLouis"
+	"contentZoey contentZoey contentZoey"
+	"contentFrancis contentFrancis contentFrancis";
+	}
+
+	
+	.content{
+	grid-area: content;
+	background: url("media/l4dBillBackground.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: columns;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between;  
+	font-family: 'Pragati Narrow';
+	padding-bottom: 30px;
+	}
+	
+	.contentBill{
+	grid-area: contentBill;
+	background: url("media/contentimg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: columns;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between;  
+	font-family: 'Pragati Narrow';	
+	}
+	
+	.content-2{
+	grid-area: content-2;
+	background: url("media/showcase.png");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: columns;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between; 
+	padding-bottom: 25px;
+	}
+	
+	.contentLouis{
+	grid-area: contentLouis;
+	background: url("media/l4dLouisBackground.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: columns;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between; 
+	padding-bottom: 25px;
+	}
+	
+	.header-c{
+	font-family: 'Pragati Narrow';
+	font-size: 3em;
+	color: white ;
+	padding-top: 30px;
+	padding-left:50px;
+	background-color:rgba(0, 0, 0, 0.5);
+	}
+	
+	.ordervids{
+	display: flex;
+	flex-direction: columns;
+	flex-wrap: wrap-reverse;
+	margin: auto;
+	}
+	
+	.order{
+	display: flex;
+	flex-flow: column;
+	width: 750px;
+	margin: auto;
+	}
+	
+	.order2{
+	display: flex;
+	flex-flow: column;
+	width: 750px;
+	margin: auto;
+	}
+	
+	.order2{
+	display: flex;
+	flex-flow: column;
+	width: 750px;
+	margin: auto;
+	}
+	
+	.order3{
+	display: flex;
+	flex-flow: column;
+	width: 750px;
+	margin: auto;
+	margin-top: 10px;
+	}
+	
+	.l4dtrailer{
+	width: 600px;
+	height: 400px;
+	float: left;
+	margin: auto;
+	}
+}	
+
+@media screen and (max-width: 1300px) {
+	.container2 {
+    display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows:
+	1100px 1100px;
+	grid-template-areas:
+	"showcase"
+	"content"
+	"content-2"
+	"content-3"
+	"content-4"
+	"content-5"
+	"content-6"
+	"content-7";
+    }
+    
+    .container4 {
+    display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows:
+	1100px 1100px;
+	grid-template-areas:
+	"showcase"
+	"content"
+	"content-2"
+	"content-3"
+	"content-4"
+	"content-5"
+	"content-6"
+	"content-7"
+	"content-8";
+    }
+	
+	.container3 {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows:
+	1100px 1000px;
+	grid-template-areas:
+	"showcaseSurvivors"
+	"contentBill"
+	"contentLouis"
+	"contentZoey"
+	"contentFrancis";
+}
+	
+	.contentB{
+	grid-area: content;
+	background: url("media/l4d2DeadCentre.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: columns;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between; 
+	font-family: 'Pragati Narrow';
+	padding-bottom: 30px;
+	}
+	
+	.content-2B{
+	grid-area: content-2;
+	background: url("media/l4d2Passing.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: columns;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between;
+	font-family: 'Pragati Narrow';	
+	padding-bottom: 30px;
+	}	
+	
+	.content-3{
+	grid-area: content-3;
+	background: url("media/l4d2DarkCarnival.jpg");
+	background-position: center;
+	background-size: cover; 
+	width: 100%;
+	border-top: 3px solid #065a06;
+	display: flex;
+	justify-content: space-between; 
+	flex-direction: columns;
+	flex-wrap: wrap-reverse;
+	padding-bottom: 30px;
+	}
+	
+	.contentZoey{
+	grid-area: contentZoey;
+	background: url("media/l4dZoeyBackground.jpg");
+	background-position: center;
+	background-size: cover; 
+	width: 100%;
+	border-top: 3px solid #065a06;
+	display: flex;
+	justify-content: space-between; 
+	flex-direction: columns;
+	flex-wrap: wrap-reverse;
+	padding-bottom: 30px;
+	}
+
+	.content-4 {
+	grid-area: content-4;
+	background: url("media/l4d2SwampFver.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: columns;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between; 
+	padding-bottom: 30px;	
+	}
+	
+	.contentFrancis {
+	grid-area: contentFrancis;
+	background: url("media/l4dFrancisBackground.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: columns;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between; 
+	padding-bottom: 30px;	
+	}
+	
+	.content-5 {
+	grid-area: content-5;
+	background: url("media/l4d2HardRain.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: columns;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between; 
+	padding-bottom: 30px;	
+	}
+	
+	.content-6 {
+	grid-area: content-6;
+	background: url("media/l4d2Parish.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: columns;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between; 
+	padding-bottom: 30px;	
+	}
+	
+	.content-7 {
+	grid-area: content-7;
+	background: url("media/l4d2ColdStream.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: columns;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between; 
+	padding-bottom: 30px;	
+	}
+	
+	.content-8 {
+	grid-area: content-8;
+	background: url("media/l4dHeal.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: columns;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between; 
+	padding-bottom: 30px;	
+	}
+	
+	.ordervids{
+	display: flex;
+	flex-direction: columns;
+	flex-wrap: wrap-reverse;
+	margin: 75px;
+	}
+	
+	.ordervids2{
+	display: flex;
+	flex-direction: columns;
+	flex-wrap: wrap-reverse;
+	margin: 75px;
+	}
+	
+	.order{
+	display: flex;
+	flex-flow: column;
+	width: 750px;
+	margin: auto;
+	margin-top: 0px;
+	margin-bottom: 25px;
+	}
+	
+	.containerslide {
+	max-width: 700px;
+	position: relative;
+	height: 450px;
+	font-family: 'Pragati Narrow';
+	border: 3px #065a06 solid;
+	margin-left: 50px;
+	}
+	
+	.CampaignDirectory {
+	width: 200px;
+	height: 200px !important;
+	background-color:rgba(0, 0, 0, 0.5);
+	border: 2px solid #065a06;
+	border-radius: 5px;
+	margin-right: 150px;
+	font-family: 'Pragati Narrow';
+	color: white;
+	padding: 2px;
+	font-size: 20px;
+	overflow: auto;
+	margin-left: 150px;
+	margin-top: 25px;
+	}
+	
+	.infoL4DMaps{
+	width: 750px;
+	height: 440px;
+	color: white;
+	font-family: 'Pragati Narrow';
+	font-size: 1.5em;
+	background-color:rgba(0, 0, 0, 0.5);
+	border: 2px solid #065a06;
+	border-radius: 5px;
+	padding: 7px;
+	margin-bottom: 25px;
+	overflow: auto;
+	}
+}
+
+@media screen and (max-width: 1300px) {
+	.l4dCharacter {
+	position: relative;
+	width: 200px !important;
+	background-color:rgba(0, 0, 0, 0.5);
+	border: 3px solid #065a06;
+	margin-right: 17px;
+	padding: 10px;
+	}
+	
+	.l4dCharacter2 {
+	position: relative;
+	width: 200px !important;
+	background-color:rgba(0, 0, 0, 0.5);
+	border: 3px solid #065a06;
+	margin-right: 17px;
+	padding: 10px;
+	margin-top: 50px;
+	}
+	
+	.containerslide {
+	max-width: 700px;
+	position: relative;
+	margin: auto;
+	height: 450px;
+	font-family: 'Pragati Narrow';
+	border: 3px #065a06 solid;
+	margin: auto !important;
+	
+	}
+	
+	.infected {
+	width: 400px;
+	height: 300px;
+	background-color:rgba(0, 0, 0, 0.5);
+	border: 2px solid #065a06;
+	border-radius: 5px;
+	color: white;
+	font-family: 'Pragati Narrow';
+	font-size: 20px;
+	padding: 10px;
+	margin-top: 20px !important;
+	margin: auto;
+	}
+	
+	.hoverImg {
+	opacity: 1;
+	display: block;
+	max-width: 100% !important;
+	height: auto;
+	transition: .5s ease;
+	backface-visibility: auto;
+	margin: auto;
+	}
+}
+
+@media screen and (max-width: 884px){
+	.container {
+	display: grid;
+	grid-template-columns:
+	.86fr 1fr .86fr;
+	grid-template-rows:
+	1100px 1000px 1000px;
+	grid-template-areas:
+	"showcase  showcase  showcase"
+	"content   content   content"
+	"content-2 content-2 content-2";
+	}
+	
+	.container3 {
+	display: grid;
+	grid-template-columns:
+	.86fr 1fr .86fr;
+	grid-template-rows:
+	1100px 1000px 1000px;
+	grid-template-areas:
+	"showcaseSurvivors  showcaseSurvivors  showcaseSurvivors"
+	"contentBill   contentBill   contentBill"
+	"contentLouis contentLouis contentLouis"
+	"contentZoey contentZoey contentZoey"
+	"contentFrancis contentFrancis contentFrancis";
+	}
+	
+	.showcase{
+	background: url("media/showcaseimg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	grid-area: showcase;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 50px;
+	}
+	
+	.showcaseSurvivors{
+	background: url("media/l4d1survivors.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	grid-area: showcaseSurvivors;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 50px;
+	}
+	
+	.l4dCharacter {
+	position: relative;
+	width: 200px !important;
+	background-color:rgba(0, 0, 0, 0.5);
+	border: 3px solid #065a06;
+	margin-right: 17px;
+	padding: 10px;
+	height: 430px;
+	margin-bottom: 10px;
+	}
+	
+	.l4dCharacter2 {
+	position: relative;
+	width: 200px !important;
+	background-color:rgba(0, 0, 0, 0.5);
+	border: 3px solid #065a06;
+	margin-right: 17px;
+	padding: 10px;
+	margin-top: 0px;
+	margin-bottom: 100px;
+	}
+	
+	.ordervids2 {
+	display: flex;
+	flex-direction: row;
+	width: 500px;
+	margin-top: 300px !important;
+	}
+	
+	.hoverImg {
+	opacity: 1;
+	display: block;
+	max-width: 100% !important;
+	height: auto;
+	transition: .5s ease;
+	backface-visibility: auto;
+	margin: auto;
+	}
+}
+/*End of Media Queries*/
+
+/*--------------------------------------------*/
+
+/*Nav Class*/
+nav{
+	background-color: black;
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	height: 60px;
+	display: flex;
+	align-content: left;
+}
+
+nav a {
+	color: white;
+	text-decoration: none;
+	padding: 13px 3px;
+	float: left;
+	display: block;
+	font-family: 'Pragati Narrow';
+}
+
+nav a:hover:not(.active), .dropdown:hover .dropbtn {
+	background-color: gray;
+	color: black;
+}
+
+nav a.active {
+	background-color: gray;
+	color: black;
+}
+
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dropbtn {
+	border: none;
+	outline: none;
+	font-size: 1em;
+	color: white;
+	padding: 16px 9px;
+	background-color: inherit;
+	font-family: 'Pragati Narrow';
+	margin: 0;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: black;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	float: none;
+	color: white;
+	padding: 10px 15px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+/*End of Nav Class*/
+
+/*-------------------------------------------*/
+
+/*Survivor Container Classes*/
+.ordervids2{
+	display: flex;
+	flex-direction: row;
+	margin: auto;
+}
+
+.l4dCharacter2 {
+	position: relative;
+	width: 200px !important;
+	background-color:rgba(0, 0, 0, 0.5);
+	border: 3px solid #065a06;
+	margin-right: 17px;
+	padding: 10px;
+	}
+
+.l4dCharacter {
+	position: relative;
+	width: 50%;
+	background-color:rgba(0, 0, 0, 0.5);
+	border: 3px solid #065a06;
+	margin-right: 17px;
+	padding: 10px;
+}
+
+.textBox {
+	transition: .5s ease;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	width: 300px;
+	height: 50px;
+	text-align: center;
+}
+
+.hoverImg {
+	opacity: 1;
+	display: block;
+	width: 200px;
+	height: auto;
+	transition: .5s ease;
+	backface-visibility: hidden;
+}
+
+.hoverText {
+	color: white;
+	font-size: 25px;
+	padding: 16px 32px;
+	font-family: 'Pragati Narrow';
+}
+
+.l4dCharacter:hover .hoverImg {
+  opacity: 0.3;
+}
+
+.l4dCharacter:hover .textBox {
+  opacity: 1;
+}
+/*End of Survivor Classes*/
+
+/*--------------------------------------------*/
+
+/*Organizer Classes*/
+.order {
+	display: flex;
+	flex-flow: column;
+	width: 750px;
+}
+
+.order2 {
+	display: flex;
+	flex-flow: column;
+	width: 750px;
+	height: 630px;
+}
+
+.order3 {
+	display: flex;
+	flex-flow: column;
+	width: 750px;
+	height: 360px;
+}
+
+.ordervids {
+	display: flex;
+	flex-direction: row;
+	margin: auto;
+}
+
+.homevidcenter {
+	margin: auto;
+}
+
+.l4dtrailer {
+	width: 600px;
+	height: 400px;
+	float: left;
+}
+
+.l4d2 {
+	width: 750px;
+	height: 250px;
+	margin: auto;
+}
+
+.split {
+	width: 700px;
+	height: auto;
+	margin-left: 50px;
+	border: 3px solid #065a06;
+	background-color: black;
+}
+.splitLouis {
+	width: 450px;
+	height: 550px;
+	margin-left: 50px;
+	border: 3px solid #065a06;
+}
+/*End of Organizer Classes*/
+
+/*--------------------------------------*/
+
+/*Text Style Classes*/
+.title_of{
+	font-family: 'Pragati Narrow';
+	font-size: 5em;
+	color: white;
+	margin-bottom: 50px
+}
+
+.CampaignHeader {
+	margin: 0px;
+}
+
+.header-c{
+	font-family: 'Pragati Narrow';
+	font-size: 3em;
+	color: white;
+	padding-top: 30px;
+	padding-left:50px;
+}
+
+.header-ce{
+	font-family: 'Pragati Narrow';
+	color: #065a06;
+	padding-left:50px;
+}
+/*End of Text Style  Classes*/
+
+/*------------------------------------------*/
+
+/*Text Content*/
+.CampaignDirectory {
+	width: 300px;
+	height: 440px;
+	background-color:rgba(0, 0, 0, 0.5);
+	border: 2px solid #065a06;
+	border-radius: 5px;
+	margin-right: 150px;
+	font-family: 'Pragati Narrow';
+	color: white;
+	padding: 2px;
+	font-size: 20px;
+}
+
+.infoL4DMaps{
+	width: 750px;
+	height: 440px;
+	color: white;
+	font-family: 'Pragati Narrow';
+	font-size: 1.5em;
+	background-color:rgba(0, 0, 0, 0.5);
+	
+	border: 2px solid #065a06;
+	border-radius: 5px;
+	padding: 7px;
+	margin: auto;
+	overflow: auto;
+}
+
+.infected {
+	width: 400px;
+	height: 300px;
+	background-color:rgba(0, 0, 0, 0.5);
+	border: 2px solid #065a06;
+	border-radius: 5px;
+	color: white;
+	font-family: 'Pragati Narrow';
+	font-size: 20px;
+	padding: 10px;
+}
+
+.items {
+	width: 500px;
+	height: 300px;
+	font-family: 'Pragati Narrow';
+	font-size:1.4em;
+	border-bottom: 3px solid #065a06;
+	border-radius: 10px;
+	color: white;
+	background-color:rgba(0, 0, 0, 0.5);
+	margin: auto;
+}
+/*End of Text Content*/
+
+/*------------------------------------------*/
+
+/*Main Content*/
+.showcase{
+	background: url("media/showcaseimg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	grid-area: showcase;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.showcaseSurvivors{
+	background: url("media/l4d1survivors.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	grid-area: showcaseSurvivors;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.contentBill{
+	grid-area: contentBill;
+	background: url("media/l4dBillBackground.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between; 
+	font-family: 'Pragati Narrow';
+}
+	
+.content{
+	grid-area: content;
+	background: url("media/contentimg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between; 
+	font-family: 'Pragati Narrow';
+}
+
+.contentB{
+	grid-area: content;
+	background: url("media/l4d2DeadCentre.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between; 
+	font-family: 'Pragati Narrow';
+}
+	
+.content-2{
+	grid-area: content-2;
+	background: url("media/showcase.png");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between; 
+}
+
+.contentLouis{
+	grid-area: contentLouis;
+	background: url("media/l4dLouisBackground.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between; 
+}
+
+.content-2B{
+	grid-area: content-2;
+	background: url("media/l4d2Passing.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between; 	
+}
+
+.content-3{
+	grid-area: content-3;
+	background: url("media/l4d2DarkCarnival.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between; 	
+}
+
+.contentZoey{
+	grid-area: contentZoey;
+	background: url("media/l4dZoeyBackground.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between; 	
+}
+
+.content-4 {
+	grid-area: content-4;
+	background: url("media/l4d2SwampFver.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between; 	
+}
+
+.contentFrancis{
+	grid-area: contentFrancis;
+	background: url("media/l4dFrancisBackground.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between; 	
+}
+
+.content-5 {
+	grid-area: content-5;
+	background: url("media/l4d2HardRain.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between; 
+	padding-bottom: 30px;	
+}
+
+.content-6 {
+	grid-area: content-6;
+	background: url("media/l4d2Parish.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between; 
+	padding-bottom: 30px;	
+}
+
+.content-7 {
+	grid-area: content-7;
+	background: url("media/l4d2ColdStream.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between; 
+	padding-bottom: 30px;	
+}
+
+.content-8 {
+	grid-area: content-8;
+	background: url("media/l4dHeal.jpg");
+	background-position: center;
+	background-size: cover; 
+	position: relative;
+	border-top: 3px solid #065a06;
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: wrap-reverse;
+	justify-content: space-between; 
+	padding-bottom: 30px;	
+}
+
+/*End of Main Content*/
+
+/*-------------------------------------*/
+
+/*Logo Class*/
+.l4dlogo {
+	display: flex;
+	align-content: right;
+	height: 60px;
+	width: 58px;
+	opacity: 0.5;
+	transition: opacity .25s ease-in-out;
+	margin-right: 3px;
+}
+
+.l4dlogosize {
+	width: 67px;
+	height: 86px;
+	background-color: black;
+}
+
+.l4dlogolink {
+	padding: 0px;
+	margin: 0px;
+}
+
+.l4dlogo:hover{
+	opacity: 1;
+}
+
+.thumbnail {
+  max-width: 40%;
+}
+
+/*End of Logo Class*/
+
+/*------------------------------------------*/
+
+/*Links*/
+a:link {
+	text-decoration: none;
+	color: white;
+}
+
+a:visited {
+    text-decoration: none;
+	color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+	color: #065a06;
+}
+
+ul.a {
+	list-style-type: circle;
+}
+/*End Links*/
+
+/*---------------------------------*/
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 17px;
+}
+
+::-webkit-scrollbar-track {
+    background: black; 
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: white; 
+	border: 2px solid #065a06;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: gray; 
+}
+/* End Scrollbar */
+
+/*-------------------------------------*/
+
+/* Lightbox & Animations */
+.lightbox {
+	display: none;
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+	padding-top: 15%;
+	background: rgba(0,0,0,0.8);
+	animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.lightbox img {
+	max-width: 90%;
+	max-height: 80%;
+	margin-top: 2%;
+}
+
+.lightbox:target {
+	outline: none;
+	display: block;
+}
+
+@keyframes animatetop {
+	from {top: -300px; opacity: 0}
+	to {top: 0px; opacity: 1}
+}
+/* End Lightbox & Animations */
+
+/*------------------------------------*/
+
+/* Image Carousel */
+.containerslide {
+	max-width: 700px;
+	position: relative;
+	margin: auto;
+	height: 450px;
+	font-family: 'Pragati Narrow';
+	border: 3px #065a06 solid;
+	margin-left: 50px;
+	background-color: black;
+}
+
+.slideImg {
+	width: 100%;
+	height: 445px;
+}
+
+.mySlides {
+	display: none;
+}
+
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+}
+
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+	color: #f2f2f2;
+	font-size: 17px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+	font-style: italic;
+}
+
+.numbertext {
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute; 
+	top: 0;
+}
+/* End Image Carousel*/
